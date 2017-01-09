@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    <button bindtap="tabHandler">点击</button>
+  </view>
+</view>
