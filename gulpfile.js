@@ -9,13 +9,14 @@ var sourcemaps = require('gulp-sourcemaps');
 var cssnano = require('cssnano');
 
 gulp.task('less', function() {
-  gulp.src('./**/**/*.less')
+  gulp.src('./less/**/*.less')
       .pipe(plumber())
       .pipe(less())
       .pipe(postcss([autoprefixer({
         'browsers': ['last 12 version', 'last 3 iOS versions']
       }), cssnano]))
-      .pipe(gulp.dest('./**/**/*.css'));
+      .pipe(gulp.dest('./css'))
+      .pipe(livereload());
 });
 
 // gulp.task('html', function() {
@@ -28,12 +29,12 @@ gulp.task('less', function() {
 //       .pipe(livereload());
 // });
 
-// gulp.task('watch', function() {
-//   livereload.listen();
-//   gulp.watch('./src/less/**/*.less', ['less']);
-//   gulp.watch('./src/views/**/*.html', ['html']);
-//   gulp.watch('./src/js/**/*.js', ['js']);
-// });
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch('./less/**/*.less', ['less']);
+  // gulp.watch('./views/**/*.html', ['html']);
+  // gulp.watch('./js/**/*.js', ['js']);
+});
 
 // gulp.task('connect', function() {
 //   connect.server({
@@ -48,5 +49,6 @@ gulp.task('less', function() {
 // });
 
 gulp.task('default', [
-  'less'
+  'less',
+  'watch'
 ]);
