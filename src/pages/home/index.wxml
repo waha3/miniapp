@@ -1,0 +1,17 @@
+<view class="home container">
+  <swiper
+    class="swiper"
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}">
+    <block
+      wx:for="{{navbar}}"
+      wx:for-index="index"
+      wx:key="index">
+      <swiper-item class="swiper-item">
+        <text>{{item}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
