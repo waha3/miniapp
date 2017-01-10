@@ -11,7 +11,7 @@ Page({
     plain: false,
     loading: false,
     accesstoken: '90821d3b-f348-4e74-8fb3-10d765114d20',  // 90821d3b-f348-4e74-8fb3-10d765114d20
-    islogin: wx.getStorageSync('id') || ''
+    islogin: false
   },
   inputhandle(e) {
     this.setData({
@@ -40,6 +40,11 @@ Page({
           }
         }
       });
+
+      // 重新渲染
+      this.setData({
+        islogin: true
+      });
     });
   },
   onLoad(e) {
@@ -52,5 +57,8 @@ Page({
     //     console.log(res);
     //   }
     // });
+  },
+  onReady() {
+
   }
 });

@@ -13,7 +13,7 @@
     "enablePullDownRefresh": true
   },
   "tabBar": {
-    "borderStyle": "white",
+    "borderStyle": "black",
     "list": [{
       "pagePath": "src/pages/home/index",
       "text": "首页",

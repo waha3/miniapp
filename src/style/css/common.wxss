@@ -11,6 +11,7 @@ page {
 }
 .home {
   padding-top: 80rpx;
+  font-size: 12px;
 }
 .home .swiper {
   width: 100%;

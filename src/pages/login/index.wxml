@@ -1,5 +1,5 @@
 <view class="login">
-  <block wx:if="{{islogin}}">
+  <block wx:if="{{!islogin}}">
     <view class="cell title">
       <text>{{title}}</text>
     </view>
