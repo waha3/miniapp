@@ -3,12 +3,14 @@
     <text class="title">{{content.title}}</text>
   </view>
   <view class="info cell">
-    <image
-      class="image"
-      src="{{content.author.avatar_url}}"
-      mode="widthFix">
-    </image>
-    <text>作者：{{content.author.loginname}}</text>
+    <view class="left">
+      <image
+        class="image"
+        src="{{content.author.avatar_url}}"
+        mode="widthFix">
+      </image>
+      <text>作者：{{content.author.loginname}}</text>
+    </view>
     <text>{{content.visit_count}}次浏览</text>
   </view>
   <view>

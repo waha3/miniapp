@@ -1,13 +1,28 @@
 {
-  "pages":[
+  "pages": [
     "src/pages/home/index",
     "src/pages/logs/logs",
-    "src/pages/topic/index"
+    "src/pages/topic/index",
+    "src/pages/login/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTitleText": "CNodejs",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "src/pages/home/index",
+      "text": "首页",
+      "iconPath": "src/images/home.png"
+    }, {
+      "pagePath": "src/pages/login/index",
+      "text": "登录",
+      "iconPath": "src/images/account.png"
+    }]
+  },
+  "debug": true
 }

@@ -1,0 +1,2 @@
+@import "../../style/css/common.wxss";
+@import "../../components/wxParse/wxParse.wxss";
