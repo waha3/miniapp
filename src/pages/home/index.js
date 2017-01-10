@@ -24,5 +24,16 @@ Page({
   },
   durationChange(e) {
     this.setData({duration: e.detail.value});
+  },
+  onReady() {
+    wx.request({
+      url: 'https://cnodejs.org/api/v1/topics',
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        console.log(res);
+      }
+    })
   }
 });
