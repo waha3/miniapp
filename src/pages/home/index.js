@@ -1,6 +1,4 @@
 const api = require('../../api/index.js');
-console.log(api);
-const WxParse = require('../../components/wxParse/wxParse.js');
 const app = getApp();
 
 Page({
@@ -15,11 +13,30 @@ Page({
     toView: 'red',
     scrollTop: 100,
     topics: [],
-    wxParseData: []
+    wxParseData: [],
+    query: {
+      page: 1,
+      tab: 'all',
+      mdrender: false
+    }
   },
 
   lower(e) {
-    console.log(e);
+    let _page = this.data.query.page;
+
+    this.setData({
+      query: Object.assign(this.data.query, {
+        page: ++_page
+      })
+    });
+
+    const { tab, page, mdrender } = this.data.query;
+    let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
+    api.get('topics', query).then(res => {
+      this.setData({
+        topics: [...this.data.topics, ...res.data.data]
+      });
+    });
   },
   changeIndicatorDots(e) {
     this.setData({
@@ -38,7 +55,9 @@ Page({
     this.setData({duration: e.detail.value});
   },
   onLoad() {
-    api.get('topics').then(res => this.setData({
+    const { tab, page, mdrender } = this.data.query;
+    let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
+    api.get('topics', query).then(res => this.setData({
       topics: res.data.data
     }));
   }

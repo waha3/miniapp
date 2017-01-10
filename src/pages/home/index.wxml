@@ -16,20 +16,19 @@
     </block>
   </swiper>
   <scroll-view
+    class="list"
     scroll-y="true"
-    style="height: 100%"
     bindscrolltolower="lower"
     scroll-top="{{scrollTop}}">
     <block
       wx:for="{{topics}}"
       wx:for-index="index"
       wx:key="index">
-      <view>
-        <navigator url="../topic/index?id={{item.id}}" hover-class="navigator-hover">
-          <text>{{item.id}}</text>
-        </navigator>
-      </view>
+      <navigator url="../topic/index?id={{item.id}}" hover-class="navigator-hover">
+        <view class="cell">
+          <text>{{item.title}}</text>
+        </view>
+      </navigator>
     </block>
   </scroll-view>
-  <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
 </view>
