@@ -17,11 +17,13 @@
     "list": [{
       "pagePath": "src/pages/home/index",
       "text": "首页",
-      "iconPath": "src/images/home.png"
+      "iconPath": "src/images/ihome.png",
+      "selectedIconPath":"src/images/ihomeactive.png"
     }, {
       "pagePath": "src/pages/login/index",
       "text": "登录",
-      "iconPath": "src/images/account.png"
+      "iconPath": "src/images/iuser.png",
+      "selectedIconPath":"src/images/iuseractive.png"
     }]
   },
   "debug": true

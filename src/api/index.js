@@ -37,10 +37,11 @@ module.exports = {
     return new Promise((resovle, reject) => {
       wx.request({
         url: url,
-        data: data,
+        data: JSON.stringify(data),
         header: {
           'content-type': 'application/json'
         },
+        method: 'POST',
         success(res) {
           resovle(res);
         },

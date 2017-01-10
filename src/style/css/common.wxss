@@ -54,4 +54,30 @@ page {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
+  margin-left: 20rpx;
+}
+.login {
+  background-color: #f6f6f6;
+  height: 100%;
+}
+.login .title {
+  text-align: center;
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+  border-bottom: none;
+}
+.login .section {
+  background-color: #fff;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  text-indent: 10rpx;
+}
+.login .section input {
+  width: 100%;
+  padding: 0 10px;
+}
+.login .btn {
+  width: 90%;
+  margin: 100px auto;
 }
