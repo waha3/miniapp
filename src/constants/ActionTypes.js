@@ -1,5 +1,0 @@
-module.exports = {
-  FETCH_LIST: 'FETCH_LIST',
-  LIST_REQUEST: 'LIST_REQUEST',
-  LIST_RESPONSE: 'LIST_RESPONSE'
-};

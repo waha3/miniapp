@@ -1,4 +1,8 @@
+const api = require('../../api/index.js');
+console.log(api);
+const WxParse = require('../../components/wxParse/wxParse.js');
 const app = getApp();
+
 Page({
   data: {
     navbar: [
@@ -7,7 +11,15 @@ Page({
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    toView: 'red',
+    scrollTop: 100,
+    topics: [],
+    wxParseData: []
+  },
+
+  lower(e) {
+    console.log(e);
   },
   changeIndicatorDots(e) {
     this.setData({
@@ -25,15 +37,9 @@ Page({
   durationChange(e) {
     this.setData({duration: e.detail.value});
   },
-  onReady() {
-    wx.request({
-      url: 'https://cnodejs.org/api/v1/topics',
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        window.console.log(res);
-      }
-    });
+  onLoad() {
+    api.get('topics').then(res => this.setData({
+      topics: res.data.data
+    }));
   }
 });

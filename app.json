@@ -1,7 +1,8 @@
 {
   "pages":[
     "src/pages/home/index",
-    "src/pages/logs/logs"
+    "src/pages/logs/logs",
+    "src/pages/topic/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
