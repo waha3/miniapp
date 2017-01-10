@@ -38,4 +38,16 @@ page {
   width: auto;
   padding: 30rpx 10px;
   border-bottom: 0.5px solid #f0f0f0;
+  color: #333;
+}
+.detail .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail .info .image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
 }

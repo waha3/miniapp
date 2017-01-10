@@ -1,3 +1,17 @@
-<view>
-  <text>{{title}}</text>
+<view class="detail">
+  <view class="cell">
+    <text class="title">{{content.title}}</text>
+  </view>
+  <view class="info cell">
+    <image
+      class="image"
+      src="{{content.author.avatar_url}}"
+      mode="widthFix">
+    </image>
+    <text>作者：{{content.author.loginname}}</text>
+    <text>{{content.visit_count}}次浏览</text>
+  </view>
+  <view>
+    <text class="content">{{content.content}}</text>
+  </view>
 </view>
