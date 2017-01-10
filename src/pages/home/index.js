@@ -32,8 +32,8 @@ Page({
         'content-type': 'application/json'
       },
       success(res) {
-        console.log(res);
+        window.console.log(res);
       }
-    })
+    });
   }
 });
