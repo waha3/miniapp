@@ -83,13 +83,21 @@ Page({
       active: item,
       query: objectAssign(this.data.query, {
         tab: map[item]
+      }),
+      loading: objectAssign(this.data.loading, {
+        hidden: false
       })
     });
 
     const {tab, page, mdrender} = this.data.query;
     let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
     api.get('topics', query)
-      .then(res => this.setData({topics: res.data.data}));
+      .then(res => this.setData({
+        topics: res.data.data,
+        loading: objectAssign(this.data.loading, {
+          hidden: true
+        })
+      }));
   },
   onLoad() {
     const {tab, page, mdrender} = this.data.query;

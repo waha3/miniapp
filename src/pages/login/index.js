@@ -11,7 +11,8 @@ Page({
     plain: false,
     loading: false,
     accesstoken: '90821d3b-f348-4e74-8fb3-10d765114d20',  // 90821d3b-f348-4e74-8fb3-10d765114d20
-    islogin: false
+    islogin: false,
+    userinfo: {}
   },
   inputhandle(e) {
     this.setData({
@@ -45,20 +46,31 @@ Page({
       this.setData({
         islogin: true
       });
+
+      if (this.data.islogin) {
+        let username = wx.getStorageSync('loginname');
+        let _path = `user/${username}`;
+        api.get(_path).then(_data => {
+          this.setData({
+            userinfo: _data.data.data
+          });
+        });
+      }
     });
   },
   onLoad(e) {
-    //调用少验证码接口
-    // wx.scanCode({
-    //   success(res) {
-    //     console.log(res);
-    //   },
-    //   fail(res) {
-    //     console.log(res);
-    //   }
-    // });
-  },
-  onReady() {
+    this.setData({
+      islogin: wx.getStorageSync('id') ? true : false
+    });
 
+    if (this.data.islogin) {
+      let username = wx.getStorageSync('loginname');
+      let path = `user/${username}`;
+      api.get(path).then(data => {
+        this.setData({
+          userinfo: data.data.data
+        });
+      });
+    }
   }
 });

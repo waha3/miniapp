@@ -30,6 +30,7 @@ page {
         line-height: 40px;
         box-sizing: border-box;
       }
+
       .active {
         border-bottom: 2px solid @Red1;
       }
@@ -38,7 +39,6 @@ page {
     .topics {
       background-color: #fff;
       margin-top: 10px;
-
     }
   }
 }
@@ -46,6 +46,7 @@ page {
 .navigator-hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 .navbar_hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -56,12 +57,6 @@ page {
   border-bottom: 1px solid @borderColor;
   color: @grayDarken;
 }
-
-// .hover_bar {
-//   height: 2px;
-//   width: 100%;
-//   background: @Red1;
-// }
 
 .detail {
   .info {
@@ -110,5 +105,30 @@ page {
   .btn {
     width: 90%;
     margin: 100px auto;
+  }
+
+  .userinfo {
+    .top {
+      width: 100%;
+      height: 300rpx;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: @graylighten;
+
+      .avator {
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .content {
+    margin-top: 10px;
+    color: #333;
+    font-size: 12px;
+    background-color: #fff;
   }
 }

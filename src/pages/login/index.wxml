@@ -25,13 +25,40 @@
   </block>
   <block wx:else>
     <!-- 登录成功之后渲染 -->
-    <view class="top">
-      hello world
-      <image
-        class="image"
-        src="{{content.author.avatar_url}}"
-        mode="widthFix">
-      </image>
+    <view class="userinfo">
+      <view class="top">
+        <view>
+          <image
+            class="avator"
+            src="{{userinfo.avatar_url}}"
+            mode="widthFix">
+          </image>
+          <view>
+            <text>{{userinfo.loginname}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="cell">
+        <block
+          wx:for="{{userinfo.recent_topics}}"
+          wx:for-index="index"
+          wx:key="index">
+          <text>{{item.title}}</text>
+        </block>
+      </view>
+    </view>
+
+    <view class="content">
+      <view class="cell">
+        <block
+          wx:for="{{userinfo.recent_replies}}"
+          wx:for-index="index"
+          wx:key="index">
+          <text>{{item.title}}</text>
+        </block>
+      </view>
     </view>
   </block>
 </view>
