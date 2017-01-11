@@ -1,6 +1,5 @@
-<import src="../../components/wxParse/wxParse.wxml"/>
 <view class="home container">
-  <swiper
+  <!-- <swiper
     class="swiper"
     indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}"
@@ -14,7 +13,7 @@
         <text>{{item}}</text>
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> -->
   <scroll-view
     class="list"
     scroll-y="true"

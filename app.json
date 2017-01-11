@@ -6,11 +6,12 @@
     "src/pages/login/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#333",
     "navigationBarTitleText": "CNodejs",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "light"
   },
   "tabBar": {
     "borderStyle": "black",

@@ -1,4 +1,5 @@
 const api = require('../../api/index.js');
+const objectAssign = require('../../lib/object_assign.js');
 const app = getApp();
 
 Page({
@@ -20,21 +21,27 @@ Page({
       mdrender: false
     }
   },
-
+  onPullDownRefresh() {
+    wx.stopPullDownRefresh();
+  },
   lower(e) {
     let _page = this.data.query.page;
 
     this.setData({
-      query: Object.assign(this.data.query, {
+      query: objectAssign(this.data.query, {
         page: ++_page
       })
     });
+    console.log('xxxxx');
 
-    const { tab, page, mdrender } = this.data.query;
+    const {tab, page, mdrender} = this.data.query;
     let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
     api.get('topics', query).then(res => {
       this.setData({
-        topics: [...this.data.topics, ...res.data.data]
+        topics: [
+          ...this.data.topics,
+          ...res.data.data
+        ]
       });
     });
   },
@@ -55,10 +62,9 @@ Page({
     this.setData({duration: e.detail.value});
   },
   onLoad() {
-    const { tab, page, mdrender } = this.data.query;
+    const {tab, page, mdrender} = this.data.query;
     let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
-    api.get('topics', query).then(res => this.setData({
-      topics: res.data.data
-    }));
+    api.get('topics', query)
+      .then(res => this.setData({topics: res.data.data}));
   }
 });
