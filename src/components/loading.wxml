@@ -1,0 +1,5 @@
+<template name="loading">
+  <view class="loading" hidden="{{hidden ? true : false}}">
+    <text>{{loading_content}}</text>
+  </view>
+</template>

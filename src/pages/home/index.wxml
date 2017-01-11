@@ -1,3 +1,4 @@
+<import src="../../components/loading.wxml" />
 <view class="home container">
   <!-- <swiper
     class="swiper"
@@ -29,5 +30,6 @@
         </view>
       </navigator>
     </block>
+    <template is="loading" data="{{...loading}}"/>
   </scroll-view>
 </view>

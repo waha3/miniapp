@@ -19,6 +19,10 @@ Page({
       page: 1,
       tab: 'all',
       mdrender: false
+    },
+    loading: {
+      hidden: true,
+      loading_content: '正在加载...'
     }
   },
   onPullDownRefresh() {
@@ -30,9 +34,11 @@ Page({
     this.setData({
       query: objectAssign(this.data.query, {
         page: ++_page
+      }),
+      loading: objectAssign(this.data.loading, {
+        hidden: false
       })
     });
-    console.log('xxxxx');
 
     const {tab, page, mdrender} = this.data.query;
     let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
@@ -41,7 +47,10 @@ Page({
         topics: [
           ...this.data.topics,
           ...res.data.data
-        ]
+        ],
+        loading: objectAssign(this.data.loading, {
+          hidden: true
+        })
       });
     });
   },

@@ -1,4 +1,7 @@
-@import "./base.less";
+@import "./base/base.less";
+// Mixin
+@import "./mixin/loading.less";
+.loadingMixin();
 
 page {
   height: 100%;
@@ -15,7 +18,6 @@ page {
 
 // home page
 .home {
-  // padding-top: 80rpx;
   font-size: 12px;
   .swiper {
     width: 100%;
