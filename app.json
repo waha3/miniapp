@@ -6,7 +6,7 @@
     "src/pages/login/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#333",
+    "navigationBarBackgroundColor": "#f70a13",
     "navigationBarTitleText": "CNodejs",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,

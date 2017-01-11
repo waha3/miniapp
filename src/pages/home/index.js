@@ -5,8 +5,9 @@ const app = getApp();
 Page({
   data: {
     navbar: [
-      '主页', '精华', '分享'
+      '主页', '精华', '分享', '招聘'
     ],
+    active: '主页',
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
@@ -69,6 +70,26 @@ Page({
   },
   durationChange(e) {
     this.setData({duration: e.detail.value});
+  },
+  navbarTabHandle(e) {
+    let map = {
+      '主页': 'all',
+      '精华': 'good',
+      '分享': 'share',
+      '招聘': 'job'
+    };
+    let item = e.currentTarget.dataset.id;
+    this.setData({
+      active: item,
+      query: objectAssign(this.data.query, {
+        tab: map[item]
+      })
+    });
+
+    const {tab, page, mdrender} = this.data.query;
+    let query = `page=${page}&tab=${tab}&mdrender=${mdrender}`;
+    api.get('topics', query)
+      .then(res => this.setData({topics: res.data.data}));
   },
   onLoad() {
     const {tab, page, mdrender} = this.data.query;

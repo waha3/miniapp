@@ -1,35 +1,41 @@
 <import src="../../components/loading.wxml" />
-<view class="home container">
-  <!-- <swiper
-    class="swiper"
-    indicator-dots="{{indicatorDots}}"
-    autoplay="{{autoplay}}"
-    interval="{{interval}}"
-    duration="{{duration}}">
-    <block
-      wx:for="{{navbar}}"
-      wx:for-index="index"
-      wx:key="index">
-      <swiper-item class="swiper-item">
-        <text>{{item}}</text>
-      </swiper-item>
-    </block>
-  </swiper> -->
+<view class="home">
   <scroll-view
     class="list"
     scroll-y="true"
-    bindscrolltolower="lower"
-    scroll-top="{{scrollTop}}">
-    <block
-      wx:for="{{topics}}"
-      wx:for-index="index"
-      wx:key="index">
-      <navigator url="../topic/index?id={{item.id}}" hover-class="navigator-hover">
-        <view class="cell">
-          <text>{{item.title}}</text>
-        </view>
-      </navigator>
-    </block>
-    <template is="loading" data="{{...loading}}"/>
+    bindscrolltolower="lower">
+    <view>
+      <scroll-view
+        class="navbar"
+        scroll-x="true">
+        <block
+          wx:for="{{navbar}}"
+          wx:for-index="index"
+          wx:key="index">
+          <view
+            class="navbar_item {{active === item ? 'active' : ''}}"
+            data-id="{{item}}"
+            hover="true"
+            hover-class="navbar_hover"
+            bindtap="navbarTabHandle">
+            <text>{{item}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class="topics">
+      <block
+        class=""
+        wx:for="{{topics}}"
+        wx:for-index="index"
+        wx:key="index">
+        <navigator url="../topic/index?id={{item.id}}" hover-class="navigator-hover">
+          <view class="cell">
+            <text>{{item.title}}</text>
+          </view>
+        </navigator>
+      </block>
+      <template is="loading" data="{{...loading}}"/>
+    </view>
   </scroll-view>
 </view>
