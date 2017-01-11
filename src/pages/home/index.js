@@ -5,7 +5,7 @@ const app = getApp();
 Page({
   data: {
     navbar: [
-      '主页', '精华', '分享', '招聘'
+      '主页', '精华', '分享', '问答', '招聘'
     ],
     active: '主页',
     indicatorDots: false,
@@ -76,7 +76,8 @@ Page({
       '主页': 'all',
       '精华': 'good',
       '分享': 'share',
-      '招聘': 'job'
+      '招聘': 'job',
+      '问答': 'ask'
     };
     let item = e.currentTarget.dataset.id;
     this.setData({

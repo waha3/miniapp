@@ -10,7 +10,7 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    accesstoken: '90821d3b-f348-4e74-8fb3-10d765114d20',  // 90821d3b-f348-4e74-8fb3-10d765114d20
+    accesstoken: '',  // 90821d3b-f348-4e74-8fb3-10d765114d20
     islogin: false,
     userinfo: {}
   },
@@ -26,6 +26,21 @@ Page({
     const path = 'accesstoken';
 
     api.post(data, path).then(res => {
+      if (!res.data.success) {
+        wx.showToast({
+          title: res.data.error_msg,
+          icon: 'loading',
+          duration: 1500
+        });
+        return false;
+      } else {
+        wx.showToast({
+          title: '登录成功',
+          icon: 'success',
+          duration: 1500
+        });
+      }
+
       // 清空缓存
       try {
         wx.clearStorageSync();
@@ -56,6 +71,17 @@ Page({
           });
         });
       }
+    });
+  },
+  clearTokenhandle() {
+    try {
+      wx.clearStorageSync();
+    } catch(err) {
+      throw new Error(err);
+    }
+
+    this.setData({
+      islogin: false
     });
   },
   onLoad(e) {
