@@ -13,7 +13,17 @@
     </view>
     <text>{{content.visit_count}}次浏览</text>
   </view>
-  <view>
-    <text class="content">{{content.content}}</text>
+  <view class="content">
+    <text>{{content.content}}</text>
+  </view>
+  <view class="comment">
+    <block
+      wx:for="{{content.replies}}"
+      wx:for-index="index"
+      wx:key="index">
+      <view class="cell">
+        <text>{{item.content}}</text>
+      </view>
+    </block>
   </view>
 </view>

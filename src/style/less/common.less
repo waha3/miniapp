@@ -1,7 +1,6 @@
 @import "./base/base.less";
 @import "./base/init.less";
 @import "./mixin/loading.less";
-
 .loadingMixin();
 
 page {
@@ -46,9 +45,9 @@ page {
   }
 }
 
-.navigator-hover,
+.btn-hover,
 .navbar_hover,
-.btn-hover {
+.navigator-hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -60,6 +59,16 @@ page {
 }
 
 .detail {
+  height: 100%;
+  padding-bottom: 20px;
+  .scroll_view {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
   .info {
     display: flex;
     flex-direction: row;
@@ -75,8 +84,14 @@ page {
       width: 60rpx;
       height: 60rpx;
       border-radius: 50%;
-      margin-left: 20rpx;
+      margin-right: 20rpx;
     }
+  }
+
+  .content {
+    position: relative;
+    top: 20px;
+    padding: 0 10px;
   }
 }
 
@@ -110,11 +125,9 @@ page {
     top: 50px;
     margin: 0 auto;
   }
-
   // button {
   //   font-size: 12px;
   // }
-
   .userinfo {
     .top {
       width: 100%;

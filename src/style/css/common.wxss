@@ -45,9 +45,9 @@ page {
   background-color: #fff;
   margin-top: 10px;
 }
-.navigator-hover,
+.btn-hover,
 .navbar_hover,
-.btn-hover {
+.navigator-hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .cell {
@@ -55,6 +55,16 @@ page {
   padding: 30rpx 10px;
   border-bottom: 1px solid #ddd;
   color: #333;
+}
+.detail {
+  height: 100%;
+  padding-bottom: 20px;
+}
+.detail .scroll_view {
+  height: 100%;
+}
+.detail .title {
+  font-size: 16px;
 }
 .detail .info {
   display: flex;
@@ -70,7 +80,12 @@ page {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
-  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.detail .content {
+  position: relative;
+  top: 20px;
+  padding: 0 10px;
 }
 .login {
   background-color: #f6f6f6;

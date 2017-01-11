@@ -13,7 +13,7 @@ Page({
     });
 
     const { id } = this.data;
-    const path = `topic/${id}`;
+    const path = `topic/${id}?mdrender=false`;
     api.get(path).then(res => this.setData({
       content: res.data.data
     }));

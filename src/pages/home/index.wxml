@@ -25,7 +25,6 @@
     </view>
     <view class="topics">
       <block
-        class=""
         wx:for="{{topics}}"
         wx:for-index="index"
         wx:key="index">
