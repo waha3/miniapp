@@ -5,7 +5,18 @@ Page({
   data: {
     title: 'hello world',
     id: '',
-    content: {}
+    content: {},
+    islogin: false
+  },
+  makecommentHandle() {
+    const { id, islogin } = this.data;
+    const path = islogin ? 'comment' : 'home';
+    const url =  `../${path}/index`;
+    console.log(url);
+    wx.redirectTo({
+      url: url
+    });
+    // wx.navigateBack();
   },
   onLoad(e) {
     this.setData({
@@ -17,5 +28,12 @@ Page({
     api.get(path).then(res => this.setData({
       content: res.data.data
     }));
+
+    // 检查有没有登录
+    if (wx.getStorageSync('id')) {
+      this.setData({
+        islogin: true
+      });
+    }
   }
 });

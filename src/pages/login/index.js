@@ -10,7 +10,7 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    accesstoken: '',  // 90821d3b-f348-4e74-8fb3-10d765114d20
+    accesstoken: '90821d3b-f348-4e74-8fb3-10d765114d20',  // 90821d3b-f348-4e74-8fb3-10d765114d20
     islogin: false,
     userinfo: {}
   },

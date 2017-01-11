@@ -17,13 +17,36 @@
     <text>{{content.content}}</text>
   </view>
   <view class="comment">
+    <view class="cell">
+      <text>评论</text>
+    </view>
     <block
       wx:for="{{content.replies}}"
       wx:for-index="index"
       wx:key="index">
-      <view class="cell">
+      <view class="cell item">
+        <view class="left">
+          <image
+            class="image"
+            src="{{item.author.avatar_url}}"
+            mode="widthFix">
+          </image>
+        </view>
         <text>{{item.content}}</text>
       </view>
     </block>
+  </view>
+  <view class="comment_btn btn">
+    <button
+      type="warn"
+      size="{{defaultSize}}"
+      loading="{{loading}}"
+      plain="{{plain}}"
+      disabled="{{disabled}}"
+      hover="true"
+      bindtap="makecommentHandle"
+      hover-class="btn-hover">
+      发表评论
+    </button>
   </view>
 </view>

@@ -3,7 +3,8 @@
     "src/pages/home/index",
     "src/pages/logs/logs",
     "src/pages/topic/index",
-    "src/pages/login/index"
+    "src/pages/login/index",
+    "src/pages/comment/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f70a13",

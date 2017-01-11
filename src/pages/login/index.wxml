@@ -10,7 +10,7 @@
         cursor-spacing="20"
         bindinput="inputhandle"/>
     </view>
-    <view class="btn">
+    <view class="btn login_btn">
       <button
         type="warn"
         size="{{defaultSize}}"
