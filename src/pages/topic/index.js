@@ -10,12 +10,12 @@ Page({
   },
   makecommentHandle() {
     const { id, islogin } = this.data;
-    const path = islogin ? 'comment' : 'login';
     if (islogin) {
       wx.navigateTo({
         url: `../comment/index?id=${id}`
       });
     } else {
+      app.topicid = id;
       wx.switchTab({
         url: '../login/index'
       });
@@ -33,7 +33,7 @@ Page({
     }));
 
     // 检查有没有登录
-    if (wx.getStorageSync('id')) {
+    if (wx.getStorageSync('accesstoken')) {
       this.setData({
         islogin: true
       });

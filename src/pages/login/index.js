@@ -43,39 +43,46 @@ Page({
 
       // 清空缓存
       try {
-        wx.clearStorageSync();
+        wx.removeStorage('accesstoken');
+        wx.removeStorage('loginname');
       } catch(err) {
         throw new Error(err);
       }
-      Object.keys(res.data).filter(key => {
-        if (key !== 'success') {
-          try {
-            wx.setStorageSync(key, res.data[key]);
-          } catch(error) {
-            throw new Error(error);
-          }
-        }
-      });
+
+      try {
+        wx.setStorageSync('accesstoken', this.data.accesstoken);
+        wx.setStorageSync('loginname', res.data.loginname);
+      } catch(error) {
+        throw new Error(error);
+      }
 
       // 重新渲染
       this.setData({
         islogin: true
       });
 
-      if (this.data.islogin) {
-        let username = wx.getStorageSync('loginname');
-        let _path = `user/${username}`;
-        api.get(_path).then(_data => {
-          this.setData({
-            userinfo: _data.data.data
-          });
+      // 存在topicid 直接条转到评论页面
+      if (app.topicid) {
+        wx.navigateTo({
+          url: `../comment/index?id=${app.topicid}`
         });
+      } else {
+        if (this.data.islogin) {
+          let username = wx.getStorageSync('loginname');
+          let _path = `user/${username}`;
+          api.get(_path).then(_data => {
+            this.setData({
+              userinfo: _data.data.data
+            });
+          });
+        }
       }
     });
   },
   clearTokenhandle() {
     try {
-      wx.clearStorageSync();
+      wx.removeStorage('accesstoken');
+      wx.removeStorage('loginname');
     } catch(err) {
       throw new Error(err);
     }
@@ -86,7 +93,7 @@ Page({
   },
   onLoad(e) {
     this.setData({
-      islogin: wx.getStorageSync('id') ? true : false
+      islogin: wx.getStorageSync('accesstoken') ? true : false
     });
 
     if (this.data.islogin) {
