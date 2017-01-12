@@ -29,11 +29,13 @@
     <view class="userinfo">
       <view class="top">
         <view>
-          <image
-            class="avator"
-            src="{{userinfo.avatar_url}}"
-            mode="widthFix">
-          </image>
+           <navigator url="../user/index?loginname={{userinfo.loginname}}" hover-class="navigator-hover">
+             <image
+               class="avator"
+               src="{{userinfo.avatar_url}}"
+               mode="widthFix">
+             </image>
+           </navigator>
           <view class="username">
             <text>{{userinfo.loginname}}</text>
           </view>
@@ -42,28 +44,32 @@
     </view>
     <view class="content">
       <view class="cell">
-        <text>最近参与的话题</text>
+        <text>最近创建的话题</text>
       </view>
       <view class="cell">
         <block
           wx:for="{{userinfo.recent_topics}}"
           wx:for-index="index"
           wx:key="index">
-          <text>{{item.title}}</text>
+          <navigator url="../topic/index?id={{item.id}}" hover-class="navigator-hover">
+            <text>{{item.title}}</text>
+          </navigator>
         </block>
       </view>
     </view>
 
     <view class="content">
       <view class="cell">
-        <text>最近创建的话题</text>
+        <text>最近参与的话题</text>
       </view>
       <view class="cell">
         <block
           wx:for="{{userinfo.recent_replies}}"
           wx:for-index="index"
           wx:key="index">
-          <text>{{item.title}}</text>
+          <navigator url="../topic/index?id={{item.id}}" hover-class="navigator-hover">
+            <text>{{item.title}}</text>
+          </navigator>
         </block>
       </view>
     </view>

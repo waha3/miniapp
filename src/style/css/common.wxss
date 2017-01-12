@@ -170,3 +170,30 @@ page {
 .comments .textarea_btn {
   margin-top: 10px;
 }
+.user {
+  background-color: #eee;
+  height: 100%;
+}
+.user .userinfo .top {
+  width: 100%;
+  height: 300rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+}
+.user .userinfo .top .avator {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.user .content {
+  margin-top: 10px;
+  color: #333;
+  font-size: 12px;
+  background-color: #fff;
+}
+.user .username {
+  text-align: center;
+}

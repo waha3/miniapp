@@ -4,7 +4,8 @@
     "src/pages/logs/logs",
     "src/pages/topic/index",
     "src/pages/login/index",
-    "src/pages/comment/index"
+    "src/pages/comment/index",
+    "src/pages/user/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f70a13",

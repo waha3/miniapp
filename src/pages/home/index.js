@@ -26,9 +26,6 @@ Page({
       loading_content: '正在加载...'
     }
   },
-  onPullDownRefresh() {
-    wx.stopPullDownRefresh();
-  },
   lower(e) {
     let _page = this.data.query.page;
 

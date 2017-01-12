@@ -4,11 +4,13 @@
   </view>
   <view class="info cell">
     <view class="left">
-      <image
-        class="image"
-        src="{{content.author.avatar_url}}"
-        mode="widthFix">
-      </image>
+      <navigator url="../user/index?loginname={{content.author.loginname}}" hover-class="navigator-hover">
+        <image
+          class="image"
+          src="{{content.author.avatar_url}}"
+          mode="widthFix">
+        </image>
+      </navigator>
       <text>作者：{{content.author.loginname}}</text>
     </view>
     <text>{{content.visit_count}}次浏览</text>
@@ -26,11 +28,13 @@
       wx:key="index">
       <view class="cell item">
         <view class="left">
-          <image
-            class="image"
-            src="{{item.author.avatar_url}}"
-            mode="widthFix">
-          </image>
+          <navigator url="../user/index?loginname={{item.author.loginname}}" hover-class="navigator-hover">
+            <image
+              class="image"
+              src="{{item.author.avatar_url}}"
+              mode="widthFix">
+            </image>
+          </navigator>
         </view>
         <text>{{item.content}}</text>
       </view>
