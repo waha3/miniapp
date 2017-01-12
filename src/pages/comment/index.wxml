@@ -2,7 +2,8 @@
   <view class="textarea">
     <textarea
       bindblur="bindTextAreaBlur"
-      auto-height
+      auto-focus="true"
+      auto-height="true"
       placeholder="请输入评论" />
   </view>
   <view class="textarea_btn btn">

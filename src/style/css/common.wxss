@@ -152,6 +152,9 @@ page {
   font-size: 12px;
   background-color: #fff;
 }
+.login .username {
+  text-align: center;
+}
 .btn {
   width: 90%;
   margin: 0 auto;

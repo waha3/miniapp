@@ -34,7 +34,7 @@
             src="{{userinfo.avatar_url}}"
             mode="widthFix">
           </image>
-          <view>
+          <view class="username">
             <text>{{userinfo.loginname}}</text>
           </view>
         </view>

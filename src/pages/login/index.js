@@ -43,17 +43,17 @@ Page({
 
       // 清空缓存
       try {
-        wx.removeStorage('accesstoken');
-        wx.removeStorage('loginname');
-      } catch(err) {
-        throw new Error(err);
+        wx.removeStorageSync('accesstoken');
+        wx.removeStorageSync('loginname');
+      } catch(error) {
+        throw new Error(error);
       }
 
       try {
         wx.setStorageSync('accesstoken', this.data.accesstoken);
         wx.setStorageSync('loginname', res.data.loginname);
-      } catch(error) {
-        throw new Error(error);
+      } catch (err) {
+        throw new Error(err);
       }
 
       // 重新渲染
@@ -81,8 +81,8 @@ Page({
   },
   clearTokenhandle() {
     try {
-      wx.removeStorage('accesstoken');
-      wx.removeStorage('loginname');
+      wx.removeStorageSync('accesstoken');
+      wx.removeStorageSync('loginname');
     } catch(err) {
       throw new Error(err);
     }
