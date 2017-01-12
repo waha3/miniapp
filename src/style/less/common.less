@@ -86,6 +86,7 @@ page {
       border-radius: 50%;
       margin-right: 20rpx;
     }
+
   }
 
   .content {
@@ -99,13 +100,18 @@ page {
       display: flex;
       flex-direction: row;
       .left {
-        flex: auto;
+
         .image {
           width: 60rpx;
           height: 60rpx;
           border-radius: 50%;
           margin-right: 20rpx;
         }
+      }
+
+      text {
+        align-self: center;
+        flex: auto;
       }
     }
   }
@@ -178,4 +184,13 @@ page {
 .btn {
   width: 90%;
   margin: 0 auto;
+}
+
+.comments {
+  height: 100%;
+  background-color: @bgColor;
+  .textarea {
+    height: 100px;
+    background-color: #fff;
+  }
 }

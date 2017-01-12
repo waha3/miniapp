@@ -93,14 +93,15 @@ page {
   display: flex;
   flex-direction: row;
 }
-.detail .comment .item .left {
-  flex: auto;
-}
 .detail .comment .item .left .image {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
   margin-right: 20rpx;
+}
+.detail .comment .item text {
+  align-self: center;
+  flex: auto;
 }
 .detail .comment_btn {
   position: relative;
@@ -155,4 +156,12 @@ page {
 .btn {
   width: 90%;
   margin: 0 auto;
+}
+.comments {
+  height: 100%;
+  background-color: #eee;
+}
+.comments .textarea {
+  height: 100px;
+  background-color: #fff;
 }

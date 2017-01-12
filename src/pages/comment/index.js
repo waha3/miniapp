@@ -1,5 +1,11 @@
+const api = require('../../api/index.js');
+const app = getApp();
+
 Page({
   data: {
-    title: 'hello world'
+    title: ''
+  },
+  onLoad(e) {
+    console.log(e);
   }
 });

@@ -11,12 +11,10 @@ Page({
   makecommentHandle() {
     const { id, islogin } = this.data;
     const path = islogin ? 'comment' : 'home';
-    const url =  `../${path}/index`;
-    console.log(url);
-    wx.redirectTo({
-      url: url
+    const url =  `../${path}/index?id=${id}`;
+    wx.navigateTo({
+      url
     });
-    // wx.navigateBack();
   },
   onLoad(e) {
     this.setData({
