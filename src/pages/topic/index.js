@@ -10,11 +10,16 @@ Page({
   },
   makecommentHandle() {
     const { id, islogin } = this.data;
-    const path = islogin ? 'comment' : 'home';
-    const url =  `../${path}/index?id=${id}`;
-    wx.navigateTo({
-      url
-    });
+    const path = islogin ? 'comment' : 'login';
+    if (islogin) {
+      wx.navigateTo({
+        url: `../comment/index?id=${id}`
+      });
+    } else {
+      wx.switchTab({
+        url: '../login/index'
+      });
+    }
   },
   onLoad(e) {
     this.setData({

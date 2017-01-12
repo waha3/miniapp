@@ -61,6 +61,7 @@ page {
 .detail {
   height: 100%;
   padding-bottom: 20px;
+
   .scroll_view {
     height: 100%;
   }
@@ -86,7 +87,6 @@ page {
       border-radius: 50%;
       margin-right: 20rpx;
     }
-
   }
 
   .content {
@@ -96,11 +96,12 @@ page {
 
   .comment {
     border-top: 1px solid @borderColor;
+
     .item {
       display: flex;
       flex-direction: row;
-      .left {
 
+      .left {
         .image {
           width: 60rpx;
           height: 60rpx;
@@ -115,6 +116,7 @@ page {
       }
     }
   }
+
   .comment_btn {
     position: relative;
     top: 20px;
@@ -147,14 +149,9 @@ page {
   }
 
   .login_btn {
-    position: relative;
-    top: 50px;
+    margin-top: 20px;
   }
 
-
-  // button {
-  //   font-size: 12px;
-  // }
   .userinfo {
     .top {
       width: 100%;
@@ -189,8 +186,13 @@ page {
 .comments {
   height: 100%;
   background-color: @bgColor;
+
   .textarea {
-    height: 100px;
+    height: 150px;
     background-color: #fff;
+  }
+
+  .textarea_btn {
+    margin-top: 10px;
   }
 }

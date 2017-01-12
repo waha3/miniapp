@@ -130,8 +130,7 @@ page {
   padding: 0 10px;
 }
 .login .login_btn {
-  position: relative;
-  top: 50px;
+  margin-top: 20px;
 }
 .login .userinfo .top {
   width: 100%;
@@ -162,6 +161,9 @@ page {
   background-color: #eee;
 }
 .comments .textarea {
-  height: 100px;
+  height: 150px;
   background-color: #fff;
+}
+.comments .textarea_btn {
+  margin-top: 10px;
 }

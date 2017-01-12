@@ -3,9 +3,16 @@ const app = getApp();
 
 Page({
   data: {
-    title: ''
+    title: '',
+    disabled: false,
+    topicid: ''
+  },
+  makecommentHandle() {
+    console.log('xxx');
   },
   onLoad(e) {
-    console.log(e);
+    this.setData({
+      topicid: e.id
+    });
   }
 });

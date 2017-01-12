@@ -67,7 +67,7 @@
         </block>
       </view>
     </view>
-    <view class="btn">
+    <view class="login_btn btn">
       <button
         type="warn"
         size="{{defaultSize}}"

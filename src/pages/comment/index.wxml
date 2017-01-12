@@ -5,4 +5,15 @@
       auto-height
       placeholder="请输入评论" />
   </view>
+  <view class="textarea_btn btn">
+    <button
+      type="warn"
+      size="default"
+      disabled="{{disabled}}"
+      hover="true"
+      bindtap="makecommentHandle"
+      hover-class="btn-hover">
+      提交评论
+    </button>
+  </view>
 </view>
