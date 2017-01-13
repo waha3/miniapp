@@ -5,7 +5,8 @@
     "src/pages/topic/index",
     "src/pages/login/index",
     "src/pages/comment/index",
-    "src/pages/user/index"
+    "src/pages/user/index",
+    "src/pages/post/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f70a13",
@@ -20,13 +21,18 @@
     "list": [{
       "pagePath": "src/pages/home/index",
       "text": "首页",
-      "iconPath": "src/images/ihome.png",
-      "selectedIconPath":"src/images/ihomeactive.png"
+      "iconPath": "src/images/home.png",
+      "selectedIconPath": "src/images/homeactive.png"
+    }, {
+      "pagePath": "src/pages/post/index",
+      "text": "发布",
+      "iconPath": "src/images/post.png",
+      "selectedIconPath": "src/images/postactive.png"
     }, {
       "pagePath": "src/pages/login/index",
       "text": "登录",
-      "iconPath": "src/images/iuser.png",
-      "selectedIconPath":"src/images/iuseractive.png"
+      "iconPath": "src/images/user.png",
+      "selectedIconPath": "src/images/useractive.png"
     }]
   },
   "debug": true

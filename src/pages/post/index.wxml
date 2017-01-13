@@ -1,0 +1,37 @@
+<view class="post">
+  <view class="plate">
+    <view class="plate_title">选择板块</view>
+    <picker
+      value="{{index}}"
+      range="{{plateClass}}"
+      range-key="name"
+      bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{name}}
+      </view>
+    </picker>
+  </view>
+  <view class="title">
+    <input
+      placeholder="标题字数10字以上"
+      auto-focus
+      bindfocus="bindInputFocus"/>
+  </view>
+  <view class="content">
+    <textarea
+      bindblur="bindTextAreaBlur"
+      auto-height
+      auto-focus
+      placeholder="内容..." />
+  </view>
+  <view class="post_btn btn">
+    <button
+      type="warn"
+      size="default"
+      hover="true"
+      bindtap="makePostHandle"
+      hover-class="btn-hover">
+      发表评论
+    </button>
+  </view>
+</view>

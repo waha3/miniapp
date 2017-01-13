@@ -80,11 +80,13 @@ Page({
     this.setData({
       active: item,
       query: objectAssign(this.data.query, {
-        tab: map[item]
+        tab: map[item],
+        page: 1
       }),
       loading: objectAssign(this.data.loading, {
         hidden: false
-      })
+      }),
+      topics: []
     });
 
     const {tab, page, mdrender} = this.data.query;

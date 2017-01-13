@@ -36,7 +36,9 @@
             </image>
           </navigator>
         </view>
-        <text>{{item.content}}</text>
+        <view class="right">
+          <text>{{item.content}}</text>
+        </view>
       </view>
     </block>
   </view>
